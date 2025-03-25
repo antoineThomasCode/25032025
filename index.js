@@ -49,3 +49,18 @@ const formatter = new Intl.NumberFormat("fr-FR", {
 });
 
 document.getElementById("totalAmount").textContent = formatter.format(total);
+
+
+
+const expenseItems = document.querySelectorAll(".expense-item");
+  let totalExpenses = 0;
+
+  expenseItems.forEach(item => {
+    const amount = parseFloat(item.getAttribute("data-amount"));
+    totalExpenses += amount;
+  });
+
+  document.getElementById("totalExpenses").textContent = new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR"
+  }).format(totalExpenses);
