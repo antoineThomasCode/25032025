@@ -34,3 +34,18 @@ function formatTime(ms) {
 
 updateTimer();
 setInterval(updateTimer, 1000);
+
+const items = document.querySelectorAll(".mission-item");
+let total = 0;
+
+items.forEach(item => {
+  const price = parseFloat(item.getAttribute("data-price"));
+  total += price;
+});
+
+const formatter = new Intl.NumberFormat("fr-FR", {
+  style: "currency",
+  currency: "EUR"
+});
+
+document.getElementById("totalAmount").textContent = formatter.format(total);
