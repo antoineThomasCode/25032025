@@ -1,5 +1,5 @@
-const start = new Date("2025-03-25T09:00:00Z"); // 10h Paris = 9h UTC
-const end = new Date("2026-03-25T09:00:00Z");
+const start = new Date("2025-03-29T09:00:00Z"); // 10h Paris = 9h UTC
+const end = new Date("2026-03-29T09:00:00Z");
 
 document.getElementById("startDate").textContent = start.toLocaleString("fr-FR", { timeZone: "Europe/Paris" });
 
